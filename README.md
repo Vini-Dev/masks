@@ -4,7 +4,7 @@
 
 Simple use
 ```js
-import masks from 'masks';
+import masks from './masks';
 
 const zipcodeMasked = masks.zipcode('00000000');
 
