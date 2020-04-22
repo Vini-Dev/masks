@@ -2,7 +2,7 @@ export default {
   unmask: (string) => string.replace(/\D/g, ''),
   cpf: (string) =>
     string
-      .replace(/\D/g, '') // Replace any non-number character with anything
+      .replace(/\D/g, '') // Replace any non-number character for nothing
       .replace(/(\d{3})(\d)/, '$1.$2')
       .replace(/(\d{3})(\d)/, '$1.$2')
       .replace(/(\d{3})(\d{1,2})/, '$1-$2')
