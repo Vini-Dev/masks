@@ -22,7 +22,7 @@ export default {
       .replace(/(\d{3})(\d)/, '$1/$2')
       .replace(/(\d{4})(\d{1,2})/, '$1-$2')
       .replace(/(-\d{2})\d+?$/, '$1'),
-  zipcode: (string) =>
+  zip_code: (string) =>
     string
       .replace(/\D/g, '')
       .replace(/(\d{5})(\d)/, '$1-$2')
@@ -33,7 +33,7 @@ export default {
       .replace(/(\d{2})(\d)/, '($1) $2')
       .replace(/(\d{4})(\d)/, '$1-$2')
       .replace(/(-\d{4})(\d)/, '$1'),
-  cell: (string) =>
+  cellphone: (string) =>
     string
       .replace(/\D/g, '')
       .replace(/(\d{2})(\d)/, '($1) $2')
