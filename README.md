@@ -29,7 +29,7 @@ const Input = ({ name, mask }) => {
     const { value } = e.target;
 
     if (mask && masks[mask]) e.target.value = masks[mask](value);
-  });
+  }), [masks, mask];
 
   return (
     <input
