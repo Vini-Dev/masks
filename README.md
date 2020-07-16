@@ -6,11 +6,11 @@ Simple use
 ```js
 import masks from './masks';
 
-const zipcodeMasked = masks.zipcode('00000000');
+const zipCodeMasked = masks.zip_code('00000000');
 
-console.log(zipcodeMasked); // Output is 00000-000
+console.log(zipCodeMasked); // Output is 00000-000
 
-console.log(masks.unmask(zipcodeMasked)); // Output is 00000000;
+console.log(masks.unmask(zipCodeMasked)); // Output is 00000000;
 ```
 
 You can use with anything
@@ -51,7 +51,7 @@ Input.propTypes = {
 };
 
 const App = () => {
-  return <Input name="zipcode" mask="zipcode" />;
+  return <Input name="zipCode" mask="zip_code" />;
 };
 
 export default App;
