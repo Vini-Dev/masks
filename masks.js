@@ -39,15 +39,19 @@ export default {
       .replace(/(\d{2})(\d)/, '($1) $2')
       .replace(/(\d{5})(\d)/, '$1-$2')
       .replace(/(-\d{4})\d+?$/, '$1'),
-  currency: (string) =>
-    string.replace(/\D/g, '') !== ''
-      ? (parseInt(string.replace(/\D/g, ''), 10) / 100).toLocaleString(
-          'pt-BR',
-          {
-            minimumFractionDigits: 2,
-            // style: 'currency', To use R$ remove the comments
-            // currency: 'BRL',
-          }
-        )
-      : '0,00',
+  currency: (value) => {
+    const string = value.toString();
+
+    if (string.replace(/\D/g, '') !== '')
+      return (parseInt(string.replace(/\D/g, ''), 10) / 100).toLocaleString(
+        'pt-BR',
+        {
+          minimumFractionDigits: 2,
+          // style: 'currency', To use R$ remove the comments
+          // currency: 'BRL',
+        }
+      );
+
+    return '0,00';
+  },
 };
