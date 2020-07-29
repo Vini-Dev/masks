@@ -22,6 +22,13 @@ export default {
       .replace(/(\d{3})(\d)/, '$1/$2')
       .replace(/(\d{4})(\d{1,2})/, '$1-$2')
       .replace(/(-\d{2})\d+?$/, '$1'),
+  cpfOrCnpj(string) {
+    const value = this.unmask(string);
+    if (value.length > 11) {
+      return this.cnpj(value);
+    }
+    return this.cpf(value);
+  },
   zip_code: (string) =>
     string
       .replace(/\D/g, '')
@@ -39,6 +46,14 @@ export default {
       .replace(/(\d{2})(\d)/, '($1) $2')
       .replace(/(\d{5})(\d)/, '$1-$2')
       .replace(/(-\d{4})\d+?$/, '$1'),
+  phoneOrCellphone(string) {
+    const value = this.unmask(string);
+    if (value.length > 10) {
+      return this.cellphone(value);
+    }
+
+    return this.phone(value);
+  },
   currency: (value) => {
     const string = value.toString();
 
